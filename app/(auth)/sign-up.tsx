@@ -10,7 +10,7 @@ const SignUp = () => {
 
     const submit = async () => {
         if (!form.name || !form.email || !form.password)
-            Alert.alert(
+            return Alert.alert(
                 'Error',
                 'Please fill all valid name, email and password'
             );
@@ -18,7 +18,7 @@ const SignUp = () => {
 
         try {
             // call appwrite signup fn
-            Alert.alert('Success', 'You have successfully signed in');
+            Alert.alert('Success', 'You have successfully signed up');
             router.replace('/');
         } catch (error: any) {
             Alert.alert('Error', error.message);
@@ -56,13 +56,13 @@ const SignUp = () => {
                 secureTextEntry={true}
             />
             <CustomButton
-                title="Sign In"
+                title="Sign Up"
                 isLoading={isSubmitting}
                 onPress={submit}
             />
-            <View className="flex justify-center flex-row gap-2">
+            <View className="flex justify-center mt-5 flex-row gap-2">
                 <Text className="base-regular text-dark-100">
-                    {`Don't have an account? `}
+                    {`Already have an account? `}
                 </Text>
                 <Link href="/sign-in" className="base-bold text-primary">
                     Sign In
