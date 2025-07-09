@@ -9,8 +9,6 @@ import {
     ScrollView,
     View,
 } from 'react-native';
-import CustomButton from '@/components/CustomButton';
-import CustomInput from '@/components/CustomInput';
 
 const _Layout = () => {
     return (
@@ -35,17 +33,8 @@ const _Layout = () => {
                         className="self-center size-48 absolute -bottom-16 z-10"
                     />
                 </View>
-                <CustomInput
-                    placeholder="Enter Your Email"
-                    value={''}
-                    onChangeText={() => {}}
-                    label="Email"
-                    secureTextEntry={false}
-                    keyboardType="email-address"
-                />
-                <CustomButton />
+                <Slot />
             </ScrollView>
-            <Slot />
         </KeyboardAvoidingView>
     );
 };
